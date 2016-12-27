@@ -1,0 +1,944 @@
+Exam A
+QUESTION 1 Which of the following are valid identifiers? (Choose 3)
+A. function 4You() { } B. function _4You() { } C. function object() { } D. $1 = "Hello"; E: $_1 = "Hello World";
+Correct Answer: BC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 2 What super-global should be used to access information about uploaded files via a POST request?
+A. $_SERVER B. $_ENV C. $_POST D. $_FILES E: $_GET
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 3 What is the difference between "print" and "echo"?
+A. There is no difference. B. Print has a return value, echo does not C. Echo has a return value, print does not D. Print buffers the output, while echo does not E: None of the above
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 4 What is the output of the following code?
+echo "1" + 2 * "0x02";
+A. 1 B. 3 C. 5 D. 20
+E: 7
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 5 What is the result of the following bitwise operation in PHP?
+1 ^ 2
+A. 1 B. 3 C. 2 D. 4 E: -1
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 6 What is the output of the following code?
+echo "22" + "0.2", 23 . 1;
+A. 220.2231 B. 22.2231 C. 22.2,231 D. 56.2
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+ 
+ 
+http://www.gratisexam.com/ 
+QUESTION 7 What is the output of the following code?
+$first = "second"; $second = "first"; echo $$$first;
+A. "first" B. "second"
+C. an empty string D. an error
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 8 Which of the following code snippets DO NOT write the exact content of the file "source.txt" to "target.txt"? (Choose 2)
+A. file_put_contents("target.txt", fopen("source.txt", "r")); B. file_put_contents("target.txt", readfile("source.txt")); C. file_put_contents("target.txt", join(file("source.txt"), "\n")); D. file_put_contents("target.txt", file_get_contents("source.txt")); E: $handle = fopen("target.txt", "w+"); fwrite($handle, file_get_contents("source.txt")); fclose($handle);
+Correct Answer: BC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 9 What is the recommended method of copying data between two opened files?
+A. copy($source_file, $destination_file); B. copy($destination_file, $source_file); C. stream_copy_to_stream($source_file, $destination_file); D. stream_copy_to_stream($destination_file, $source_file); E: stream_bucket_prepend($source_file, $destination_file);
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference: corrected.
+QUESTION 10 Which of the following will set a 10 seconds read timeout for a stream?
+A. ini_set("default_socket_timeout", 10); B. stream_read_timeout($stream, 10); C. Specify the timeout as the 5th parameter to the fsockopen() function used to open a stream D. stream_set_timeout($stream, 10); E: None of the above
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 11
+What function allows resizing of PHP's file write buffer?
+A. ob_start() B. set_write_buffer() C. stream_set_write_buffer() D. Change the output_buffering INI setting via ini_set() function
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 12 What does the __FILE__ constant contain?
+A. The filename of the current script. B. The full path to the current script. C. The URL of the request made. D. The path to the main script.
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 13 What can prevent PHP from being able to open a file on the hard drive (Choose 2)?
+A. File system permissions B. File is outside of open_basedir C. File is inside the /tmp directory. D. PHP is running in CGI mode.
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference:
+QUESTION 14 What purpose do namespaces fulfill?
+A. Encapsulation B. Alternative to classes C. Improved performance D. All of the above
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 15 When would you use classes and when would you use namespaces?
+A. Use classes to encapsulate code and represent objects, and namespaces to avoid symbol name collisions B. Use classes for performance-sensitive code, and namespaces when readability matters more C. Use namespaces for performance-sensitive code, and classes when readability matters more D. Always use them; namespaces are always superior to classes
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 16 In order to create an object storage where each object would be stored only once, you may use which of the following? (Choose 2)
+A. SplFixedArray B. SplObjectStorage C. SplString D. spl_object_hash E: spl_same_object
+Correct Answer: BD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 17 What is the output of the following code?
+class Base { protected static function whoami() { echo "Base "; } public static function whoareyou() { static::whoami(); } }
+class A extends Base { public static function test() { Base::whoareyou(); self::whoareyou(); parent::whoareyou(); A::whoareyou(); static::whoareyou(); } public static function whoami() { echo "A "; } }
+class B extends A { public static function whoami() { echo "B "; }
+} B::test();
+A. B B B B B B. Base A Base A B C. Base B B A B D. Base B A A B
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 18 Late static binding is used in PHP to:
+A. Load dynamic libraries and extensions at runtime B. Use caller class information provided in static method call C. Resolve undefined class names by automatically including needed files D. Find proper method to call according to the call arguments
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 19 What is the output of the following code?
+class Test { public function __call($name, $args) { call_user_func_array(array('static', "test$name"), $args); } public function testS($l) { echo "$l,"; } }
+class Test2 extends Test { public function testS($l) { echo "$l,$l,"; } } $test = new Test2(); $test->S('A');
+A. A, B. A,A, C. A,A,A, D. PHP Warning: call_user_func_array() expects parameter 1 to be a valid callback
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 20 Which of the following tasks can be achieved by using magic methods? (Choose 3)
+A. Initializing or uninitializing object data B. Creating a new stream wrapper C. Creating an iterable object D. Processing access to undefined methods or properties E: Overloading operators like +, *, etc. F: Converting objects to string representation
+Correct Answer: AD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 21 How should class MyObject be defined for the following code to work properly? Assume $array is an array and MyObject is a user-defined class.
+$obj = new MyObject(); array_walk($array, $obj);
+A. MyObject should extend class Closure B. MyObject should implement interface Callable C. MyObject should implement method __call D. MyObject should implement method __invoke
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 22 Consider the following code. What change must be made to the class for the code to work as written?
+class Magic { protected $v = array("a" => 1, "b" => 2, "c" => 3); public function __get($v) { return $this->v[$v]; } } $m = new Magic(); $m->d[] = 4; echo $m->d[0];
+A. Nothing, this code works just fine. B. Add __set method doing $this->v[$var] = $val C. Rewrite __get as: public function __get(&$v) D. Rewrite __get as: public function &__get($v) E: Make __get method static
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 23 SimpleXML provides the ability to iterate over items in an XML document, as well as access items within it as if they were object properties. When creating your own classes to access data, implementing which of the following would NOT achieve this goal?
+A. __toString B. Iterator C. __get/__set D. ArrayAccess
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 24 Which of the following is used to find all PHP files under a certain directory?
+A. PHPIterator B. RecursiveTreeIterator C. RecursiveDirectoryIterator D. SplTempFileObject
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 25 What is the name of the key in $_FILES['name'] that contains the number of bytes of the uploaded file?
+A. B. C. D.
+Correct Answer: Section: (none) Explanation
+Explanation/Reference: corrected and updated.
+QUESTION 26 What information can be used to reliably determine the type of an uploaded file?
+A. MIME type B. File name extension C. Contents of the file
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 27 Which MIME type is always sent by a client if a JPEG file is uploaded via HTTP?
+A. image/jpeg B. image/jpg C. image/pjpeg D. Depends on the client system
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 28 Your application uses PHP to accept and process file uploads. It fails to upload a file that is 5 MB in size, although upload_max_filesize is set to "10M". Which of the following configurations could be responsible for this outcome? (Choose 2)
+A. The PHP configuration option post_max_size is set to a value that is too small B. The web server is using an incorrect encoding as part of the HTTP response sent to the client C. The browser uses an incorrect encoding as part of the HTTP request sent to the server D. The hidden form field MAX_FILE_SIZE was set to a value that is too small E: PHP cannot process file uploads larger than 4 MB
+Correct Answer: AD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 29 Consider the following table data and PHP code. What is the outcome?
+Table data (table name "users" with primary key "id"):
+id name email ------- ----------- ------------------1 anna alpha@example.com 2 betty beta@example.org 3 clara gamma@example.net 5 sue sigma@example.info
+PHP code (assume the PDO connection is correctly established):
+$dsn = 'mysql:host=localhost;dbname=exam'; $user = 'username'; $pass = '********'; $pdo = new PDO($dsn, $user, $pass);
+$cmd = "SELECT * FROM users WHERE id = :id"; $stmt = $pdo->prepare($cmd); $id = 3; $stmt->bindParam('id', $id); $stmt->execute(); $stmt->bindColumn(3, $result); $row = $stmt->fetch(PDO::FETCH_BOUND);
+A. The database will return no rows. B. The value of $row will be an array. C. The value of $result will be empty. D. The value of $result will be 'gamma@example.net'.
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 30 Consider the following table data and PHP code. What is the outcome?
+Table data (table name "users" with primary key "id"):
+id name email ------- ----------- ------------------1 anna alpha@example.com 2 betty beta@example.org 3 clara gamma@example.net 5 sue sigma@example.info
+PHP code (assume the PDO connection is correctly established):
+$dsn = 'mysql:host=localhost;dbname=exam'; $user = 'username'; $pass = '********'; $pdo = new PDO($dsn, $user, $pass);
+try { $cmd = "INSERT INTO users (id, name, email) VALUES (:id, :name, :email)"; $stmt = $pdo->prepare ($cmd); $stmt->bindValue('id', 1); $stmt->bindValue('name', 'anna'); $stmt->bindValue('email', 'alpha@example.com'); $stmt->execute(); echo "Success!"; } catch (PDOException $e) { echo "Failure!"; throw $e; }
+A. The INSERT will succeed and the user will see the "Success!" message. B. The INSERT will fail because of a primary key violation, and the user will see the "Success!" message. C. The INSERT will fail because of a primary key violation, and the user will see a PDO warning message. D. The INSERT will fail because of a primary key violation, and the user will see the "Failure!" message.
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 31 Consider the following table data and PHP code. What is a possible outcome?
+Table data (table name "users" with primary key "id"):
+id name email
+------- ----------- ------------------1 anna alpha@example.com 2 betty beta@example.org 3 clara gamma@example.net 5 sue sigma@example.info
+PHP code (assume the PDO connection is correctly established):
+$dsn = 'mysql:host=localhost;dbname=exam'; $user = 'username'; $pass = '********'; $pdo = new PDO($dsn, $user, $pass);
+$cmd = "SELECT name, email FROM users LIMIT 1"; $stmt = $pdo->prepare($cmd); $stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_BOTH); $row = $result[0];
+A. The value of $row is `array(0 => 'anna', 1 => 'alpha@example.com')`. B. The value of $row is `array('name' => 'anna', 'email' => 'alpha@example.com')`. C. The value of $row is `array(0 => 'anna', 'name' => 'anna', 1 => 'alpha@example.com', 'email' => 'alpha@example.com')`. D. The value of $result is `array('anna' => 'alpha@example.com')`.
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 32 Consider the following table data and PHP code, and assume that the database supports transactions. What is the outcome?
+Table data (table name "users" with primary key "id"):
+id name email ------- ----------- ------------------1 anna alpha@example.com 2 betty beta@example.org 3 clara gamma@example.net 5 sue sigma@example.info
+PHP code (assume the PDO connection is correctly established):
+$dsn = 'mysql:host=localhost;dbname=exam'; $user = 'username'; $pass = '********'; $pdo = new PDO($dsn, $user, $pass);
+try { $pdo->exec("INSERT INTO users (id, name, email) VALUES (6, 'bill', 'delta@example.com')"); $pdo->begin(); $pdo->exec("INSERT INTO users (id, name, email) VALUES (7, 'john', 'epsilon@example.com')"); throw new Exception(); } catch (Exception $e) { $pdo->rollBack(); }
+A. The user 'bill' will be inserted, but the user 'john' will not be.
+B. Both user 'bill' and user 'john' will be inserted. C. Neither user 'bill' nor user 'john' will be inserted. D. The user 'bill' will not be inserted, but the user 'john' will be.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 33 Given a PHP value, which sample shows how to convert the value to JSON?
+A. $string = json_encode($value); B. $string = Json::encode($value); C. $json = new Json($value); $string = $json->__toString(); D. $value = (object) $value; $string = $value->__toJson();
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 34 Assuming UTF-8 encoding, what is the value of $count?
+$count = strlen($data);
+A. 0 B. 4 C. 5 D. 7
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 35 What is the output of this code?
+$world = 'world'; echo <<<'TEXT' hello $world TEXT;
+A. hello world B. hello $world C. PHP Parser error
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 36 What function can be used to retrieve an array of current options for a stream context?
+A. stream_context_get_params B. stream_context_get_default C. stream_context_get_options D. The 'options' element of the stream_get_meta_data return value
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 37 When retrieving data from URLs, what are valid ways to make sure all file_get_contents calls send a certain user agent string? (Choose 2)
+A. $default_opts = array('http'=>array('user_agent'=>"My Cool Browser")); $default = stream_context_set_default($default_opts); B. stream_context_set_option("user_agent", "My Cool Browser"); C. ini_set('user_agent', "My Cool Browser"); D. stream_context_set_option($context, "http", "user_agent", "My Cool Browser");
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 38 What will an opcode cache ALWAYS automatically improve?
+A. Running time of a loop in a PHP script B. Efficiency of HTML markup generated by a PHP script C. Execution speed of a PHP script D. Memory footprint of a PHP script E: None of the above
+Correct Answer: Section: (none) Explanation
+Explanation/Reference:
+QUESTION 39 What is cached by an opcode cache?
+A. Compiled PHP code B. Native PHP extensions C. Data sent to the client D. Data received from the database
+Correct Answer: A
+Section: (none) Explanation
+Explanation/Reference:
+QUESTION 40 Which php.ini setting is usually required to use an opcode cache?
+A. extension B. zend_extension C. optimizer D. dl
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 41 What is the output of the following code?
+var_dump(boolval(-1));
+A. bool(true) B. bool(false)
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 42 What is the output of the following code?
+var_dump(boolval([]));
+A. bool(true) B. bool(false)
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 43 What is the output of the following code?
+var_dump(boolval(new StdClass()));
+A. bool(true) B. bool(false)
+Correct Answer: A Section: (none)
+Explanation
+Explanation/Reference:
+QUESTION 44 Which of the following is NOT true about PHP traits? (Choose 2)
+A. Multiple traits can be used by a single class. B. A trait can implement an interface. C. A trait can declare a private variable. D. Traits are able to be auto-loaded. E: Traits automatically resolve conflicts based on definition order.
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 45 Given the following code, what will the output be:
+trait MyTrait { private $abc = 1; public function increment() { $this->abc++; } public function getValue() { return $this->abc; } } class MyClass { use MyTrait; public function incrementBy2() { $this->increment(); $this->abc++; } }
+$c = new MyClass; $c->incrementBy2(); var_dump($c->getValue());
+A. Fatal error: Access to private variable MyTrait::$abc from context MyClass B. Notice: Undefined property MyClass::$abc C. int(2) D. int(3) E: NULL
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 46 Given the following code, how can we use both traits A and B in the same class? (select all that apply)
+trait A {
+public function hello() { return "hello"; } public function world() { return "world"; } } trait B { public function hello() { return "Hello"; } public function person($name) { return ":$name"; } }
+A. Rename the A::hello() method to a different name using A::hello as helloA; B. Use B::hello() instead of A 's version using B::hello insteadof A C. Use B::hello() instead of A 's version using use B::hello D. Rename the A::hello() method to a different name using A::hello renameto helloA; E: None of the above (both can be used directly)
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 47 In the following code, which line should be changed so it outputs the number 2:
+class A { protected $x = array(); /* A */
+public function getX() { /* B */ return $this->x; /* C */ } }
+$a = new A(); /* D */ array_push($a->getX(), "one"); array_push($a->getX(), "two"); echo count($a->getX());
+A. No changes needed, the code would output 2 as is B. Line A, to: protected &$x = array(); C. Line B, to: public function &getX() { D. Line C, to: return &$this->x; E: Line D, to: $a =& new A();
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 48 What is the output of the following code? class A { public $a = 1;
+public function __construct($a) { $this->a = $a; } public function mul() { return function($x) { return $this->a*$x; }; } } $a = new A(2); $a->mul = function($x) { return $x*$x; }; $m = $a->mul(); echo $m(3);
+A. 9 B. 6 C. 0 D. 3
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 49 What is the output of the following code? class Number { private $v; private static $sv = 10; public function __construct($v) { $this->v = $v; } public function mul() { return static function ($x) { return isset($this) ? $this->v*$x : self::$sv*$x; }; } }
+$one = new Number(1); $two = new Number(2); $double = $two->mul(); $x = Closure::bind($double, null, 'Number'); echo $x(5);
+A. 5 B. 10 C. 50 D. Fatal error
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 50 Which of the following statements about anonymous functions in PHP are NOT true? (Choose 2)
+A. Anonymous functions can be bound to objects B. Anonymous functions created within object context are always bound to that object
+C. Assigning closure to a property of an object binds it to that object D. Methods bind() and bindTo() of the Closure object provide means to create closures with different binding and scope E: Binding defines the value of $this and the scope for a closure
+Correct Answer: BC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 51 What will be the result of the following operation? $a = array_merge([1,2,3] + [4=>1,5,6]); echo $a[2];
+A. 4 B. 3 C. 2 D. false E: Parse error
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 52 Which of the following functions will allow identifying unique values inside an array?
+ 
+ 
+http://www.gratisexam.com/ 
+A. array_unique_values B. array_distinct C. array_count_values D. array_intersect E: array_values
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 53 When using password_hash() with the PASSWORD_DEFAULT algorithm constant, which of the following is true? (Choose 2)
+A. The algorithm that is used for hashing passwords can change when PHP is upgraded. B. The salt option should always be set to a longer value to account for future algorithm requirements. C. The string length of the returned hash can change over time.
+D. The hash algorithm that's used will always be compatible with crypt() .
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 54 Which of the following are NOT acceptable ways to create a secure password hash in PHP? (Choose 2)
+A. md5() B. hash_pbkdf2() C. password_hash() D. crypt() E: openssl_digest()
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 55 What is the preferred method for preventing SQL injection?
+A. Always using prepared statements for all SQL queries. B. Always using the available database-specific escaping functionality on all variables prior to building the SQL query. C. Using addslashes() to escape variables to be used in a query. D. Using htmlspecialchars() and the available database-specific escaping functionality to escape variables to be used in a query.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 56 Is the following code vulnerable to SQL Injection ($mysqli is an instance of the MySQLi class)?
+$age = $mysqli->real_escape_string($_GET['age']); $name = $mysqli->real_escape_string($_GET['name']); $query = "SELECT * FROM `table` WHERE name LIKE '$name' AND age = $age"; $results = $mysqli->query($query);
+A. No, the code is fully protected from SQL Injection. B. Yes, because the $name variable is improperly escaped. C. Yes, because the $name variable and the $age variable is improperly escaped. D. Yes, because the $age variable is improperly escaped. E: Yes, because you cannot prevent SQL Injection when using MySQLi
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 57 Which of the following does NOT help to protect against session hijacking and fixation attacks?
+A. Use SSL and set the $secure cookie parameter to true . B. Set the session.use_only_cookies php.ini parameter to 1 . C. Set the session.cookie_lifetime php.ini parameter to 0 . D. Protect against XSS vulnerabilities in the application. E: Rotate the session id on successful login and logout using session_regenerate_id()
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 58 Which of the following PHP functions can be used to set the HTTP response code? (Choose 2)
+A. header_add() B. header() C. http_set_status() D. http_response_code() E: http_header_set()
+Correct Answer: BD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 59 What is the name of the header used to require HTTP authentication?
+A. Authorization-Required B. WWW-Authenticate C. HTTP-Authenticate D. Authentication-Required E: HTTP-Auth
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 60 What types of HTTP authentication are supported by PHP? (Choose 2)
+A. Basic B. Advanced C. Strict D. Digest E: Realm
+Correct Answer: AD Section: (none) Explanation
+Explanation/Reference: answer is verified.
+QUESTION 61 Which of the following items in the $_SERVER superglobal are important for authenticating the client when using HTTP Basic authentication? (Choose 2)
+A. PHP_AUTH_TYPE B. PHP_AUTH_PASSWORD C. PHP_AUTH_DIGEST D. PHP_AUTH_PW E: PHP_AUTH_USER
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 62 When tracking upload progress with sessions, the values of 2 INI settings are needed to determine the key in $_SESSION of the upload progress data. What are the INI settings? (Choose 2)
+A. session.upload_progress.file B. session.upload_progress.key C. session.upload_progress.prefix D. session.upload_progress.freq E: session.upload_progress.name
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 63 What is the name of the function that allows you register a set of functions that implement user- defined session handling?
+A. session_set_handler() B. session_set_storage_handler() C. session_register_handler() D. session_set_save_handler()
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 64 Which of these databases is NOT supported by a PDO driver?
+A. Microsoft SQL Server B. SQLite C. Microsoft Access D. Berkeley DB
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 65 Which of these statements about PDO is NOT true?
+A. PDO has built-in support for Large Objects (LOBs). B. Placeholders within PDO prepared statements need to be named. C. When something goes wrong, PDO can throw an instance of its own exception class. D. PDO does not emulate missing database features.
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 66 What is the output of the following code?
+class test { public $value = 0; function test() { $this->value = 1; } function __construct() { $this->value = 2; } } $object = new test(); echo $object->value;
+A. 2 B. 1 C. 0 D. 3 E: No Output, PHP will generate an error message.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 67 Which methods can be used to overload object properties? (Choose 2)
+A. set(), get() B. __set(), __get()
+C. __put(), __receive(), __exists() D. set(), get(), isset() E: __isset(), __unset()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 68 What is the result of the following code?
+class T { const A = 42 + 1; } echo T::A;
+A. 42 B. 43 C. Parse error
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 69 Which of the following statements is NOT true?
+A. Class constants are public B. Class constants are being inherited C. Class constants can omit initialization (default to NULL) D. Class constants can be initialized by const
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 70 What is the result of the following code?
+define('PI', 3.14); class T { const PI = PI; } class Math { const PI = T::PI; } echo Math::PI;
+A. Parse error
+B. 3.14 C. PI D. T::PI
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 71 Given the following code, what is correct?
+function f(stdClass &$x = NULL) { $x = 42; } $z = new stdClass; f($z); var_dump($z);
+A. Error: Typehints cannot be NULL B. Error: Typehints cannot be references C. Result is NULL D. Result is object of type stdClass E: Result is 42
+Correct Answer: Section: (none) Explanation
+Explanation/Reference:
+QUESTION 72 Which of the following statements is NOT correct?
+A. Only methods can have type hints B. Typehints can be optional C. Typehints can be references
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 73 Which of the following statements is correct?
+A. Interfaces can extend only one interface B. Interfaces can extend more than one interface C. Interfaces can inherit a method from different interfaces D. Interfaces can redeclare inherited methods
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 74 Which of the following statements about exceptions is correct? (Choose 2)
+A. you can only throw classes derived from Exception B. a try block can have multiple catch blocks C. a try block must not be followed by a catch block D. try blocks cannot contain nested try blocks
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference:
+QUESTION 75 What is the output of the following code?
+try { class MyException extends Exception {}; try { throw new MyException; } catch (Exception $e) { echo "1:"; throw $e; } catch (MyException $e) { echo "2:"; throw $e; } } catch (Exception $e) { echo get_class($e); }
+A. A parser error, try cannot be followed by multiple catch B. 1: C. 2: D. 1:Exception E: 1:MyException F: 2:MyException G: MyException
+Correct Answer: Section: (none) Explanation
+Explanation/Reference:
+QUESTION 76 Which of the following is NOT possible using reflection?
+A. Analysing of nearly any aspect of classes and interfaces B. Analysing of nearly any aspect of functions C. Adding class methods D. Implement dynamic construction (new with variable class name)
+Correct Answer: C
+Section: (none) Explanation
+Explanation/Reference:
+QUESTION 77 What is the name of the method that can be used to provide read access to virtual properties in a class?
+A. __call() B. __get() C. __set() D. __wakeup() E: __fetch()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 78 Which of the following statements about Reflection is correct?
+A. Reflection is an extension that can be disabled B. Reflection is a new extension present only in PHP 5.3+ C. Reflection only allows to reflect on built-in classes D. Built-in classes can be reflected on command line using php --rc <classname>
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 79 What is the name of the PHP function used to automatically load non-yet defined classes?
+A. autoload() B. __autoload() C. __catch() D. load() E: loadClass()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 80 When a class is defined as final it:
+A. Can no longer be extended by other classes. B. Means methods in the class are not over-loadable. C. Cannot be defined as such, final is only applicable to object methods.
+D. Cannot be instantiated.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 81 Type hinting in PHP allows the identification of the following variable types: (Choose 2)
+A. String B. Integer C. Array D. Any class or interface type E: All of the above
+Correct Answer: CD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 82 In the following code, which classes can be instantiated?
+abstract class Graphics { abstract function draw($im, $col); }
+abstract class Point1 extends Graphics { public $x, $y; function __construct($x, $y) { $this->x = $x; $this->y = $y; } function draw($im, $col) { ImageSetPixel($im, $this->x, $this->y, $col); } } class Point2 extends Point1 { }
+abstract class Point3 extends Point2 { }
+A. Graphics B. Point1 C. Point2 D. Point3 E: None, the code is invalid
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 83 Which of the following code snippets is correct? (Choose 2)
+A. interface Drawable { abstract function draw(); } B. interface Point { function getX(); function getY(); } C. interface Line extends Point { function getX2(); function getY2(); } D. interface Circle implements Point { function getRadius(); }
+Correct Answer: BC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 84 Which of the following statements about PHP is false? (Choose 2)
+A. A final class can be derived. B. A final class may be instantiated. C. A class with a final function may be derived. D. Static functions can be final. E: Properties can be final.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 85 Which of the following is correct? (Choose 2)
+A. A class can extend more than one class. B. A class can implement more than one class. C. A class can extend more than one interface. D. A class can implement more than one interface. E: An interface can extend more than one interface. F: An interface can implement more than one interface.
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 86 Which of the following functions are used to escape data within the context of HTML? (Choose 2)
+A. htmlentities() B. addslashes() C. stripslashes() D. strip_tags() E: htmlspecialchars()
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 87 In a shared hosting environment, session data can be read by PHP scripts written by any user. How can you prevent this? (Choose 2)
+A. Store session data in a different location with session.save_path . B. Store session data in a database. C. Enable safe_mode . D. Set session.name to something unique.
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference: corrected and modified.
+QUESTION 88 Which of the following filtering techniques prevents all cross-site scripting (XSS) vulnerabilities?
+A. Strip all occurrences of the string <script . B. Strip all occurrences of the string javascript . C. Enable magic_quotes_gpc . D. None of the above.
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 89 You work for a shared hosting provider, and your supervisor asks you to disable user scripts to dynamically load PHP extensions using the dl() function. How can you do this? (Choose 2)
+A. Set enable_dl to Off in the server's php.ini configuration file. B. Add dl to the current value of disable_functions in the server's php.ini configuration file. C. Add dl to the current value of disable_classes in the server's php.ini configuration file. D. Write a custom function called dl() , save it under the name prepend.inc and then set the auto_prepend_file directive to prepend.inc in php.ini.
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference:
+QUESTION 90 When a browser requests an image identified by an img tag, it never sends a Cookie header.
+A. TRUE B. FALSE
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 91 Which of the following techniques ensures that a value submitted in a form can only be yes or no ?
+A. Use a select list that only lets the user choose between yes and no . B. Use a hidden input field that has a value of yes or no . C. Enable the safe_mode configuration directive. D. None of the above.
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 92 Which function can NOT help prevent cross-site scripting? (Choose 2)
+A. addslashes() B. htmlentities() C. htmlspecialchars() D. strip_tags() E: quotemeta()
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 93 Which constant must be passed as the second argument to htmlentities() to convert single quotes (') to HTML entities?
+A. TRUE B. FALSE C. ENT_QUOTES D. ENT_NOQUOTES E: ENT_COMPAT
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 94 One common security risk is exposing error messages directly in the browser. Which PHP configuration directive can be disabled to prevent this?
+A. html_display B. error_reporting C. display_errors D. error_log E: ignore_repeated_errors
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 95 Which of the following superglobals does not necessarily contain data from the client?
+A. $_POST B. $_SESSION C. $_GET D. $_SERVER
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 96 Which of the following statements is true?
+A. All PHP database extensions support prepared statements B. All PHP database extensions come with their own special helper functions to escape user data to be used in dynamic SQL queries C. All PHP database extensions provide an OOP interface D. All PHP database extensions appear in the output of php -m , if installed and enabled
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 97 Transactions are used to...
+A. guarantee high performance B. secure data consistency C. secure access to the database D. reduce the database server overhead E: reduce code size in PHP
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 98 When a query that is supposed to affect rows is executed as part of a transaction, and reports no affected rows, it could mean that: (Choose 2)
+A. The transaction failed B. The transaction affected no lines C. The transaction was rolled back D. The transaction was committed without error
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference:
+QUESTION 99 Transactions should be used to: (Choose 2)
+A. Prevent errors in case of a power outage or a failure in the SQL connection B. Ensure that the data is properly formatted C. Ensure that either all statements are performed properly, or that none of them are. D. Recover from user errors
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 100 An unbuffered database query will: (Choose 2)
+A. Return the first data faster B. Return all data faster C. Free connection faster for others scripts to use D. Use less memory
+Correct Answer: AD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 101 Which technique should be used to speed up joins without changing their results?
+A. Add indices on joined columns B. Add a WHERE clause C. Add a LIMIT clause
+D. Use an inner join
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 102 Consider the following XML code:
+<?xml version="1.0" encoding="utf-8"?> <books> <book id="1">PHP 5.5 in 42 Hours</book> <book id="2">Learning PHP 5.5 The Hard Way</book> </books>
+Which of the following SimpleXML calls prints the name of the second book? (Let $xml = simplexml_load_file("books.xml"); .) (Choose 2)
+A. echo $xml->books->book[2]; B. echo $xml->books->book[1]; C. echo $xml->book[1]; D. echo $xml->xpath("/books/book[@id=2]"); E: $c = $xml->children(); echo $c[1];
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 103 What method can be used to find the tag <any> via the DOM extension?
+A. getElementById() B. getElementsByTagName() C. getElementsByTagNameNS() D. getElementByName() E: findTag()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+ 
+ 
+http://www.gratisexam.com/ 
+QUESTION 104 What DOMElement method should be used to check for availability of a non-namespaced attribute?
+A. getAttributeNS()
+B. getAttribute() C. hasAttribute() D. hasAttributeNS()
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 105 Which of the following is an invalid DOM save method?
+A. save() B. saveFile() C. saveXML() D. saveHTML() E: saveHTMLFile()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 106 Which of the following rules must every correct XML document adhere to? (Choose 2)
+A. It has to be well-formed. B. It has to be valid. C. It has to be associated to a DTD. D. It may only contain UTF-8 encoded characters.
+Correct Answer: AB Section: (none) Explanation
+Explanation/Reference:
+QUESTION 107 Which one of the following XML declarations is NOT valid?
+A. <?xml version="1.0" ?> B. <?xml version="1.1" encoding="UTF-8" ?> C. <?xml standalone="no" ?> D. <?xml standalone="1" ?>
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 108 Which of the following parts must a XML document have in order to be well-formed?
+A. An XML declaration B. A root element C. A specified encoding D. A reference to either a DTD or an XML schema definition
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 109 Which of the following can be registered as entry points with a SoapServer instance (choose 2):
+A. A single function B. A single method from a class C. All methods from a class D. All classes defined in a script
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 110 Which of the following statements about SOAP is NOT true?
+A. SOAP is also a request-/response-based protocol. B. SOAP can be transported using SMTP, HTTP and other protocols. C. SOAP requires developers to use WSDL. D. SOAP traffic via HTTP can be encrypted and compressed just like other HTTP requests.
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 111 What SimpleXML function is used to parse a file?
+A. simplexml_load_file() B. simplexml_load_string() C. load() D. loadFile() E: loadXML() F: None of the above.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 112 The XML document below has been parsed into $xml via SimpleXML. How can the value of <foo> tag accessed?
+<?xml version='1.0'?> <document> <bar> <foo>Value</foo> </bar> </document>
+A. $xml->bar['foo'] B. $xml->bar->foo C. $xml['document']['bar']['foo'] D. $xml->document->bar->foo E: $xml->getElementByName('foo');
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 113 What parsing methodology is utilized by the SimpleXML extension?
+A. SAX B. DOM C. XPath D. Push/Pull Approach E: Expat
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 114 How can the id attribute of the 2nd baz element from the XML string below be retrieved from the SimpleXML object found inside $xml? <?xml version='1.0'?> <foo> <bar> <baz id="1">One</baz> <baz id="2">Two</baz> </bar> </foo>
+A. $xml->getElementById('2'); B. $xml->foo->bar->baz[2]['id'] C. $xml->foo->baz[2]['id'] D. $xml->foo->bar->baz[1]['id'] E: $xml->bar->baz[1]['id']
+Correct Answer: Section: (none) Explanation
+Explanation/Reference: modified.
+QUESTION 115 How can a SimpleXML object be converted to a DOM object?
+A. dom_import_simplexml() B. dom_export_simplexml() C. simplexml_import_dom() D. SimpleXML2Dom() E: None of the above.
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 116 What is the method used to execute XPath queries in the SimpleXML extension?
+A. xpathQuery() B. xpath() C. simpleXMLXpath() D. query() E: evaluate()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 117 Which of the following statements are FALSE?
+A. SimpleXML allows removal of attributes. B. SimpleXML allows addition of new attributes. C. SimpleXML allows removal of nodes. D. SimpleXML allows addition of new nodes. E: None of the above
+Correct Answer: Section: (none) Explanation
+Explanation/Reference:
+QUESTION 118 What DOM method is used to load HTML files?
+A. load() B. loadXML() C. loadHTML() D. loadHTMLFile()
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 119 What is the output of the following code?
+for ($i = 0; $i < 1.02; $i += 0.17) { $a[$i] = $i; } echo count($a);
+A. 0 B. 1 C. 2 D. 6 E: 7
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 120 After performing the following operations:
+$a = array('a', 'b', 'c'); $a = array_keys(array_flip($a));
+What will be the value of $a?
+A. array('c', 'b', 'a') B. array(2, 1, 0) C. array('a', 'b', 'c') D. None of the above
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 121 PHP's array functions such as array_values() can be used on an object if the object...
+A. implements Traversable B. is an instance of ArrayObject C. implements ArrayAccess D. None of the above
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 122 Which is the most efficient way to determine if a key is present in an array, assuming the array has no NULL values?
+A. in_array('key', array_keys($a)) B. isset($a['key']) C. array_key_exists('key', $a) D. None of the above
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 123 An object can be counted with count() and sizeof() if it...
+A. implements ArrayAccess B. has a public __count() method C. was cast to an object from an array D. None of the above
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 124 What will be the result of the following operation?
+array_combine(array("A","B","C"), array(1,2,3));
+A. array("A","B","C",1,2,3) B. array(1,2,3,"A","B",C") C. array("A"=>1,"B"=>2,"C"=>3) D. array(1=>"A",2=>"B",3=>"C") E: array(1,2,3)
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 125 Which of the following expressions will evaluate to a random value from an array below?
+$array = array("Sue","Mary","John","Anna");
+A. array_rand($array); B. array_rand($array, 1);
+C. shuffle($array); D. $array[array_rand($array)]; E: array_values($array, ARRAY_RANDOM);
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 126 What function can reverse the order of values in an array so that keys are preserved?
+A. array_flip() B. array_reverse() C. rsort() D. krsort() E: array_multisort()
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 127 What will be the output value of the following code?
+$array = array(1,2,3); while (list(,$v) = each($array)); var_dump(current($array));
+A. bool(false) B. int(3) C. int(1) D. NULL E: Array
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 128 What will be the output of the following code?
+$a = array(0, 1, 2 => array(3, 4)); $a[3] = array(4, 5); echo count($a, 1);
+A. 4 B. 5 C. 8 D. None of the above
+Correct Answer: C
+Section: (none) Explanation
+Explanation/Reference:
+QUESTION 129 Given the following array:
+$a = array(28, 15, 77, 43);
+Which function will remove the value 28 from $a?
+A. array_shift() B. array_pop() C. array_pull() D. array_unshift()
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 130 The constructs for(), foreach(), and each() can all be used to iterate an object if the object...
+A. implements ArrayAccess B. implements Iterator C. implements Iterator and ArrayAccess D. None of the above
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 131 Which parts of the text are matched in the following regular expression?
+$text = <<<EOT The big bang bonged under the bung. EOT;
+preg_match_all('@b.n?g@', $text, $matches);
+A. bang bong bung B. bang bonged bung C. big bang bong bung D. big bang bung
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 132 What will the following code piece print?
+echo strtr('Apples and bananas', 'ae', 'ea')
+A. Applas end benenes B. Epplas end benenes C. Apples and bananas D. Applas end bananas
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 133 You want to parse a URL into its single parts. Which function do you choose?
+A. parse_url() B. url_parse() C. get_url_parts() D. geturlparts()
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 134 Which elements does the array returned by the function pathinfo() contain?
+A. root, dir, file B. dirname, filename, fileextension C. dirname, basename, extension D. path, file
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 135 What will the following function call print?
+printf('%010.6f', 22);
+A. 22 B. 22.00 C. 022.000000 D. 22.000000
+Correct Answer: C
+Section: (none) Explanation
+Explanation/Reference:
+QUESTION 136 What is the output of the following code?
+echo 0x33, ' monkeys sit on ', 011, ' trees.';
+A. 33 monkeys sit on 11 trees. B. 51 monkeys sit on 9 trees. C. monkeys sit on trees. D. 0x33 monkeys sit on 011 trees.
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 137 You want to access the 3rd character of a string, contained in the variable $test. Which of the following possibilites work? (Choose 2)
+A. echo $test(3); B. echo $test[2]; C. echo $test(2); D. echo $test{2}; E: echo $test{3};
+Correct Answer: BD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 138 Which sentence describes the following regular expression match?
+preg_match('/^\d+(?:\.[0-9]+)?$/', $test);
+A. It matches float numbers with thousand seperators. B. It matches float numbers without thousand seperators. C. It matches binary integer numbers. D. It matches any string. E: It does not match anything
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 139 You need to escape special characters to use user input inside a regular expression. Which functions
+would you use? (Choose 2)
+A. addslashes() B. htmlentities() C. preg_quote() D. regex_quote() E: quote_meta()
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 140 How many elements does the $matches array contain after the following function call is performed? preg_match('/^(\d{1,2}([a-z]+))(?:\s*)\S+ (?=201[0-9])/', '21st March 2014', $matches);
+A. 1 B. 2 C. 3 D. 4
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 141 How many elements does the array $matches from the following code contain?
+$str = "The cat sat on the roof of their house.";
+$matches = preg_split("/(the)/i", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
+A. 2 B. 3 C. 4 D. 7 E: 9
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 142 Given the default PHP configuration, how can all of the parameters provided via GET be accessed in a form of a string?
+A. $_GET['ALL'] B. $_SERVER['QUERY'] C. $_SERVER['QUERY_STRING'] D. $_ENV['QUERY'] E: $QUERY_STRING
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 143 What is the length of a string returned by: md5(rand(), TRUE);
+A. Depends on the value returned by rand() function B. 32 C. 24 D. 16 E: 64
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 144 What is the return value of the following code?
+strpos("me myself and I", "m", 2)
+A. 2 B. 3 C. 4 D. 0 E: 1
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 145 What is the return value of the following code: substr_compare("foobar", "bar", 3);
+A. -1 B. 1 C. TRUE D. 0 E: FALSE
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 146 You want to allow your users to submit HTML code in a form, which will then be displayed as real code and
+not affect your page layout. Which function do you apply to the text, when displaying it? (Choose 2)
+A. strip_tags() B. htmlentities() C. htmltidy() D. htmlspecialchars() E: showhtml()
+Correct Answer: BD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 147 How many elements does the array $pieces contain after the following piece of code has been executed?
+$pieces = explode("/", "///");
+A. 0 B. 3 C. 4 D. 5
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 148 Which string will be returned by the following function call?
+$test = '/etc/conf.d/wireless'; substr($test, strrpos($test, '/')); // note that strrpos() is being called, and not strpos()
+A. "" B. "/wireless" C. "wireless" D. "/conf.d/wireless" E: "/etc"
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 149 An HTML form contains this form element: <input type="file" name="myFile" />
+When this form is submitted, the following PHP code gets executed:
+move_uploaded_file( $_FILES['myFile']['tmp_name'], 'uploads/' . $_FILES['myFile']['name'] );
+Which of the following actions must be taken before this code may go into production? (Choose 2)
+A. Check with is_uploaded_file() whether the uploaded file $_FILES['myFile']['tmp_name'] is valid B. Sanitize the file name in $_FILES['myFile']['name'] because this value is not consistent among web browsers C. Check the charset encoding of the HTTP request to see whether it matches the encoding of the uploaded file D. Sanitize the file name in $_FILES['myFile']['name'] because this value could be forged E: Use $HTTP_POST_FILES instead of $_FILES to maintain upwards compatibility
+Correct Answer: BD Section: (none) Explanation
+Explanation/Reference:
+QUESTION 150 Which PHP function retrieves a list of HTTP headers that have been sent as part of the HTTP response or are ready to be sent?
+A. header() B. headers() C. headers_list() D. headers_sent() E: getresponseheaders()
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 151 Which options do you have in PHP to set the expiry date of a session?
+A. Set the session.duration directive in php.ini B. Set session cookie expiry date locally via session_set_cookie_params() C. Set session expiry date locally via session_cache_expire() D. None of the above
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 152 The following form is loaded in a browser and submitted, with the checkbox activated:
+<form method="post"> <input type="checkbox" name="accept" /> </form>
+In the server-side PHP code to deal with the form data, what is the value of $_POST['accept'] ?
+A. accept B. ok C. true D. on
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 153 When uploading a file to a PHP script using the HTTP PUT method, where would the file data be found?
+A. the $_FILES super-global B. the input stream php://input C. the $_POST super-global D. the global variable scope
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 154 The following form is loaded in a recent browser and submitted, with the second select option selected:
+<form method="post"> <select name="list"> <option>one</option> <option>two</option> <option>three</option> </select> </form>
+In the server-side PHP code to deal with the form data, what is the value of $_POST['list'] ?
+A. 1 B. 2 C. two D. null
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference: corrected.
+QUESTION 155 Which of the following is NOT a requirement for file uploads to work?
+A. The PHP directive file_uploads must be set to On B. The form's method attribute must be set to "post" C. The form must include a hidden input element with the name set to "MAX_FILE_SIZE" D. The form's enctype attribute must be set to "multipart/form-data"
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 156 An HTML form contains this form element:
+<input type="image" name="myImage" src="image.png" /> The user clicks on the image to submit the form. How can you now access the relative coordinates of the mouse click?
+A. $_FILES['myImage']['x'] and $_FILES['myImage']['y'] B. $_POST['myImage']['x'] and $_POST['myImage']['y'] C. $_POST['myImage.x'] and $_POST['myImage.y'] D. $_POST['myImage_x'] and $_POST['myImage_y']
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 157 Your supervisor wants you to disallow PHP scripts to open remote HTTP and FTP resources using PHP's file functions. Which php.ini setting should you change accordingly?
+Correct Answer: allow_url_fopen, allow_url_fopen=off, allow_url_fopen=Off, allow_url_fopen = off, allow_url_fopen = Off Section: (none) Explanation
+Explanation/Reference:
+QUESTION 158 Consider the following code. Which keyword should be used in the line marked with "KEYWORD" instead of "self" to make this code work as intended?
+    abstract class Base {            protected function __construct() {            }            public static function create() {                    return new self(); // KEYWORD             }            abstract function action();    }        class Item extends Base {            public function action() { echo __CLASS__; }    }        $item = Item::create();    $item->action(); // outputs "Item"
+Correct Answer: static Section: (none) Explanation
+Explanation/Reference:
+QUESTION 159 Which SPL class implements fixed-size storage?
+Correct Answer: SplFixedArray Section: (none) Explanation
+Explanation/Reference:
+QUESTION 160 Which PHP function is used to validate whether the contents of $_FILES['name']['tmp_name'] have really been uploaded via HTTP?
+Correct Answer: is_uploaded_file(), is_uploaded_file Section: (none) Explanation
+Explanation/Reference: super valid.
+QUESTION 161 Which PHP function is used to validate whether the contents of $_FILES['name']['tmp_name'] have really been uploaded via HTTP, and also save the contents into another folder?
+Correct Answer: move_uploaded_file(), move_uploaded_file Section: (none) Explanation
+Explanation/Reference:
+QUESTION 162 What is the name of the key for the element in $_FILES['name'] that contains the provisional name of the uploaded file?
+Hot Area:
+Correct Answer: 
+Section: (none) Explanation
+Explanation/Reference: tmp_name
+QUESTION 163 What is the name of the key in $_FILES['name'] that contains the number of bytes of the uploaded file?
+Correct Answer: size Section: (none) Explanation
+Explanation/Reference:
+QUESTION 164 What is the output of the following code?
+    function increment ($val)    {
+        $val = $val + 1;    }        $val = 1;        increment ($val);        echo $val;
+Correct Answer: 1 Section: (none) Explanation
+Explanation/Reference:
+QUESTION 165 What is the output of the following code?
+    function increment ($val)    {        ++$val;    }        $val = 1;        increment ($val);        echo $val;
+Correct Answer: 1 Section: (none) Explanation
+Explanation/Reference:
+QUESTION 166 What is the output of the following code?
+    function increment ($val)    {        $_GET['m'] = (int) $_GET['m'] + 1;    }        $_GET['m'] = 1;        echo $_GET['m'];
+Correct Answer: 1 Section: (none) Explanation
+Explanation/Reference:
+QUESTION 167 What is the output of the following code?
+    function increment (&$val)    {        return $val + 1;    }
+        $a = 1;        echo increment ($a);    echo increment ($a);
+Correct Answer: 22 Section: (none) Explanation
+Explanation/Reference:
+QUESTION 168 Consider the following code:
+$result = $value1 ??? $value2; 
+Which operator needs to be used instead of ??? so that $result equals $value1 if $value1 evaluates to true, and equals $value2 otherwise? Just state the operator as it would be required in the code.
+Correct Answer: ?: Section: (none) Explanation
+Explanation/Reference:
+QUESTION 169 What is the output of the following code?
+    class Number {            private $v = 0;            public function __construct($v) { $this->v = $v; }            public function mul() {                    return function ($x) { return $this->v * $x; };            }    }        $one = new Number(1);    $two = new Number(2);    $double = $two->mul()->bindTo($one);    echo $double(5);
+Correct Answer: 5 Section: (none) Explanation
+Explanation/Reference:
+QUESTION 170 Please provide the value of the $code variable in the following statement to set an HTTP status code that signifies that the requested resource was not found.
+http_response_code($code); 
+Correct Answer: 404, 404 Not Found Section: (none) Explanation
+Explanation/Reference:
+QUESTION 171 Which DOMElement property provides a reference to the list of the element's children?
+Correct Answer: childNodes Section: (none) Explanation
+Explanation/Reference:
+QUESTION 172 Which value will be assigned to the key 0 in this example?
+$foo = array(true, '0' => false, false => true);
+Correct Answer: true Section: (none) Explanation
+Explanation/Reference:
+QUESTION 173 Please provide the name of the super-global variable where all the information about cookies is available.
+Correct Answer: $_COOKIE, $_COOKIE[\], _COOKIE, _COOKIE[\] Section: (none) Explanation
+Explanation/Reference:
+QUESTION 174 Which PHP function sets a cookie whose value does not get URL encoded when sending it to the browser?
+Correct Answer: setrawcookie, setrawcookie() Section: (none) Explanation
+Explanation/Reference:
+QUESTION 175 Which PHP function sets a cookie and URL encodes its value when sending it to the browser?
+Correct Answer: setcookie, setcookie() Section: (none) Explanation
+Explanation/Reference: super valid.
+QUESTION 176 Which of these elements can be encapsulated by namespaces and made accessible from the outside?
+A. Only classes B. Classes, functions and constants C. Classes, functions, constants and variables
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 177 You'd like to use the class MyDBConnection that's defined in the MyGreatFramework \MyGreatDatabaseAbstractionLayer namespace, but you want to minimize *as much as possible* the length of the class name you have to type. What would you do?
+A. Import the MyGreatFramework namespace B. Import the MyGreatFramework\MyGreatDatabaseAbstractionLayer namespace C. Alias MyGreatFramework\MyGreatDatabaseAbstractionLayer\MyDBConnection to a shorter name D. Alias MyGreatFramework\MyGreatDatabaseAbstractionLayer to a shorter name
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 178 How should you track errors on your production website?
+A. Enabling display_errors B. Enabling log_errors C. Having a site-wide exception handler D. Setting error_reporting to E_ALL & ~E_NOTICE
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference: valid and modified.
+QUESTION 179 What would be the output of the following code?
+namespace MyFramework\DB;
+class MyClass { static function myName() { return __METHOD__; } }
+print MyClass::myName();
+A. MyFramework\DB\myName B. MyFramework\DB\MyClass\myName C. MyFramework\DB\MyClass::myName D. MyClass::myName
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 180 Which of the following methods are available to limit the amount of resources available to PHP through php.ini? (Choose 2)
+A. Limit the amount of memory a script can consume B. Limit the total amount of memory PHP uses on the entire server C. Limit the maximum execution time of a script D. Limit the maximum number of concurrent PHP processes E: Limit the maximum number of concurrent PHP threads
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 181 Consider the following two files. When you run test.php, what would the output look like?
+test.php: include "MyString.php"; print ","; print strlen("Hello world!");
+MyString.php: namespace MyFramework\String; function strlen($str) { return \strlen($str)*2; // return double the string length } print strlen("Hello world!")
+A. 12,12 B. 12,24 C. 24,12 D. 24,24 E: PHP Fatal error: Cannot redeclare strlen()
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 182 Which line of code can be used to replace the INSERT comment in order to output "hello"?
+class C { public $ello = 'ello'; public $c; public $m; function __construct($y) { $this->c = static function($f) { // INSERT LINE OF CODE HERE }; $this->m = function() { return "h"; }; } }
+$x = new C("h"); $f = $x->c; echo $f($x->m);
+A. return $this->m() . "ello"; B. return $f() . "ello"; C. return "h". $this->ello; D. return $y . "ello";
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 183 What is the output of the following code? function z($x) { return function ($y) use ($x) { return str_repeat($y, $x); }; }
+$a = z(2); $b = z(3); echo $a(3) . $b(2);
+A. 22333 B. 33222 C. 33322 D. 222333
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 184 What is the output of the following code?
+$f = function () { return "hello"; };
+echo gettype($f);
+A. hello B. string C. object D. function
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 185 What is the output of the following code?
+class C { public $x = 1; function __construct() { ++$this->x; } function __invoke() { return ++$this->x; } function __toString() { return (string) --$this->x; } }
+$obj = new C(); echo $obj();
+A. 0 B. 1 C. 2 D. 3
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 186 Given a JSON-encoded string, which code sample correctly indicates how to decode the string to native PHP values?
+A. $json = new Json($jsonValue); $value = $json->decode(); B. $value = Json::decode($jsonValue); C. $value = json_decode($jsonValue); D. $value = Json::fromJson($jsonValue);
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 187 Which of the following PHP values may NOT be encoded to a JavaScript literal using PHP's ext/json capabilities?
+A. 'Hello, world!' B. function(){ alert("Hello, world!"); } C. array('Hello, world!') D. array('message' => 'Hello, world!')
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 188 Which of the following will NOT instantiate a DateTime object with the current timestamp?
+A. $date = new DateTime(); B. $date = new DateTime('@' . time()); C. $date = new DateTime('now');
+D. $date = new DateTime(time());
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 189 Given a DateTime object that is set to the first second of the year 2014, which of the following samples will correctly return a date in the format '2014-01-01 00:00:01'?
+A. $datetime->format('%Y-%m-%d %h:%i:%s') B. $datetime->format('%Y-%m-%d %h:%i:%s', array('year', 'month', 'day', 'hour', 'minute', 'second')) C. $datetime->format('Y-m-d H:i:s') D. $date = date('Y-m-d H:i:s', $datetime);
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference: perfected.
+QUESTION 190 Given the following DateTime objects, what can you use to compare the two dates and indicate that $date2 is the later of the two dates?
+$date1 = new DateTime('2014-02-03');
+$date2 = new DateTime('2014-03-02');
+A. $date2 > $date1 B. $date2 < $date1 C. $date1->diff($date2) < 0 D. $date1->diff($date2) > 0
+Correct Answer: A Section: (none) Explanation
+Explanation/Reference:
+QUESTION 191 Given the following DateTime object, which sample will NOT alter the date to the value '2014- 02-15'?
+$date = new DateTime('2014-03-15');
+A. $date->sub(new DateInterval('P1M')); B. $date->setDate(2014, 2, 15); C. $date->modify('-1 month'); D. $date->diff(new DateInterval('-P1M'));
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 192 Which interfaces could class C implement in order to allow each statement in the following code to work? (Choose 2)
+$obj = new C();
+foreach ($obj as $x => $y) { echo $x, $y; }
+A. Iterator B. ArrayAccess C. IteratorAggregate D. ArrayObject
+Correct Answer: AC Section: (none) Explanation
+Explanation/Reference:
+QUESTION 193 What is the output of the following code?
+class Foo Implements ArrayAccess { function offsetExists($k) { return true;} function offsetGet($k) {return 'a';} function offsetSet($k, $v) {} function offsetUnset($k) {} } $x = new Foo();
+echo array_key_exists('foo', $x)?'true':'false';
+A. true B. false
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 194 What is the output of the following code?
+class Bar { private $a = 'b'; public $c = 'd'; } $x = (array) new Bar();
+echo array_key_exists('a', $x) ? 'true' : 'false'; echo '-'; echo array_key_exists('c', $x) ? 'true' : 'false';
+A. false-false B. false-true C. true-false
+D. true-true
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 195 What is the output of the following code?
+$a = array('a', 'b'=>'c'); echo property_exists((object) $a, 'a')?'true':'false'; echo '-'; echo property_exists((object) $a, 'b')?'true':'false';
+A. false-false B. false-true C. true-false D. true-true
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 196 What is the output of the following code?
+echo '1' . (print '2') + 3;
+A. 123 B. 213 C. 142 D. 214 E: Syntax error
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference:
+QUESTION 197 What is the output of the following code?
+$a = 3; switch ($a) { case 1: echo 'one'; break; case 2: echo 'two'; break; default: echo 'four'; break; case 3: echo 'three'; break; }
+A. one B. two C. three
+D. four
+Correct Answer: C Section: (none) Explanation
+Explanation/Reference:
+QUESTION 198 What is "instanceof" an example of?
+A. a boolean B. an operator C. a function D. a language construct E: a class magic
+Correct Answer: B Section: (none) Explanation
+Explanation/Reference:
+QUESTION 199 Which of the following may be used in conjunction with CASE inside a SWITCH statement?
+ 
+ 
+http://www.gratisexam.com/ 
+A. A scalar B. An expression C. A boolean D. All of the above
+Correct Answer: D Section: (none) Explanation
+Explanation/Reference: answer is modified.
+QUESTION 200 What is the output of the following code?
+$a = 'a'; $b = 'b'; echo isset($c) ? $a.$b.$c : ($c = 'c').'d';
+A. abc B. cd C. 0d
+Correct Answer: B Section: (none)
+Explanation
+Explanation/Reference:
