@@ -12,3 +12,5 @@ function object() { }
 //$1 = "Hello";
 $_1 = "Hello World";
 echo 'Hi';
+
+//тест правки файла
